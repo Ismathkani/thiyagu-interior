@@ -1,0 +1,410 @@
+/* ==========================================================================
+   THIYAGU INTERIOR — LUXURY DESIGN SYSTEM & MOBILE-FIRST STYLES
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --bg-main: #FAF8F5;
+  --bg-cream: #F4EFEA;
+  --bg-card: #FFFFFF;
+  --bg-card-glass: rgba(255, 255, 255, 0.88);
+  --bg-dark: #141312;
+  --bg-dark-card: #1D1B1A;
+
+  /* Typography Colors */
+  --text-primary: #1A1918;
+  --text-secondary: #57524D;
+  --text-muted: #878078;
+  --text-light: #F7F5F2;
+  --text-gold: #C5A059;
+
+  /* Wood & Accent Tones */
+  --walnut-dark: #332216;
+  --walnut: #4E3524;
+  --walnut-warm: #684832;
+  --wood-light: #E8DCCF;
+  --gold-accent: #C5A059;
+  --gold-glow: rgba(197, 160, 89, 0.35);
+  --gold-gradient: linear-gradient(135deg, #DFB76C 0%, #C5A059 50%, #9E7B38 100%);
+  --dark-gradient: linear-gradient(180deg, rgba(20, 19, 18, 0.2) 0%, rgba(20, 19, 18, 0.88) 100%);
+
+  /* Border & Shadows */
+  --border-light: rgba(78, 53, 36, 0.1);
+  --border-gold: rgba(197, 160, 89, 0.3);
+  --shadow-sm: 0 4px 12px rgba(26, 25, 24, 0.04);
+  --shadow-md: 0 10px 28px rgba(26, 25, 24, 0.08);
+  --shadow-lg: 0 20px 45px rgba(26, 25, 24, 0.12);
+  --shadow-gold: 0 8px 30px rgba(197, 160, 89, 0.25);
+
+  /* Radii */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-xl: 36px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  letter-spacing: 0.02em;
+  min-height: 48px; /* Mobile touch friendly */
+  white-space: nowrap;
+}
+
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #1A1918;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(197, 160, 89, 0.4);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-dark {
+  background: var(--walnut-dark);
+  color: var(--text-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-dark:hover {
+  background: var(--walnut);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-light);
+}
+
+.btn-outline:hover {
+  border-color: var(--gold-accent);
+  color: var(--gold-accent);
+  background: rgba(197, 160, 89, 0.05);
+}
+
+.btn-outline-light {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #FFFFFF;
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: #20BD5A;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+}
+
+/* Badge / Pills */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(197, 160, 89, 0.12);
+  color: #8C6A2E;
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-tag {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold-accent);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.card-luxury {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-smooth);
+  overflow: hidden;
+}
+
+.card-luxury:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(197, 160, 89, 0.3);
+}
+
+/* Before & After Comparison Slider Container */
+.ba-slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  user-select: none;
+  touch-action: pan-y;
+  background: #141312;
+  box-shadow: var(--shadow-lg);
+}
+
+.ba-slider-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.ba-before-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #FFFFFF;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  cursor: ew-resize;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.ba-handle-btn {
+  width: 44px;
+  height: 44px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  color: var(--walnut-dark);
+}
+
+.ba-tag {
+  position: absolute;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 5;
+  backdrop-filter: blur(8px);
+}
+
+.ba-tag-before {
+  top: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+}
+
+.ba-tag-after {
+  top: 1rem;
+  right: 1rem;
+  background: var(--gold-accent);
+  color: #1A1918;
+}
+
+/* Floating WhatsApp Button (Mobile-First) */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.25rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #25D366;
+  color: #FFFFFF;
+  padding: 0.75rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+  animation: pulseFloat 3s infinite ease-in-out;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+.floating-whatsapp-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding-right: 0.5rem;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .floating-whatsapp {
+    padding: 0.75rem 1.15rem;
+    bottom: 2rem;
+    right: 2rem;
+  }
+  .floating-whatsapp-text {
+    display: inline;
+  }
+}
+
+@keyframes pulseFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--wood-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--walnut-warm);
+}
